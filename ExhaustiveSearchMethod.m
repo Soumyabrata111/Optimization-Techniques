@@ -9,7 +9,8 @@ clear
 a = input('What is the lower limit? ');
 b = input('What is the upper limit? ');
 n = input('What is the number of intermediate points? ');
-delta_x = (b-a)/n; % increment in x
+delta_x = (b-a)/n; % Increment in x
+c = max(a,b) % To set the axex limit
 
 %% Initialization
 x1 = a;
@@ -33,5 +34,9 @@ while (x3 <= b)
         x2 = x3;
         x3 = x2 + delta_x;
     end
+    fplot (f,[a b], 'b')% Plotting the function
+    grid on
+    hold on
+    plot(x2,y2,'*') % Plotting the minimum pooint
+    hold off
 end
-
