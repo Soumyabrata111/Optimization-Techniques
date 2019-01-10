@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Jan  5 21:19:12 2019
-
 @author: soumy
 Exhaustive Search Method as described in the book 
 'OPTIMIZATION FOR ENGINEERING DESIGN' by KALYANMOY DEB
@@ -12,7 +11,7 @@ get_ipython().magic('reset -sf')
 
 # To run current calculations
 # Declaration of variables
-a = .001 # The lower limit
+a = 1 # The lower limit
 b = 5 # The upper limit
 n = 10000 # The number of intermediate points in the range
 
@@ -38,3 +37,16 @@ while (x3 <= b):
         x1 = x2
         x2 = x3
         x3 = x2 + dx
+# To draw plot        
+import numpy as np
+x = np.arange(a,b,1e-6)
+y = equation(x)
+import matplotlib.pyplot as plt
+plt.figure()
+plt.plot (x,y,'g--',label = '$the function$')
+plt.plot(x1,y1,'r*',label = '$lower point$')
+plt.plot(x3,y3,'bo',label = '$higher point$')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.legend()
+plt.savefig('exhaustive search method')
