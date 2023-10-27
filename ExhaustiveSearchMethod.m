@@ -4,7 +4,7 @@
 % Matlab version R2018b
 % Date: 14th October, 2018
 % Date: 25th October, 2023 (Updated)
-
+% Date: 27th October, 2023 (Updated)
 
 clear all
 clc
@@ -25,7 +25,6 @@ f_min=f(x_min);
 
 while x3<=b
     if f(x2)<=f(x1) && f(x2)<=f(x3)
-        disp(['The minimum point lies between: [' num2str(x1) ',' num2str(x3) ']'])
         disp(['The approx minimum point is: ' num2str(x2)])
         disp(['The approx minimum function value is: ' num2str(f(x2))])
         x_min=x2;
@@ -56,7 +55,7 @@ legend('Location','best')
 legend('show')
 
 % Save the figure as a PNG file
-saveas(gcf, 'Exhaustive_Search_Method.png');
+saveas(gcf, 'Exhaustive Search Method.png');
 
 % Display the plot
 hold off;
