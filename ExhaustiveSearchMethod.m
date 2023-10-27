@@ -1,7 +1,7 @@
 % Exhaustive Search Method as Explained in the book 
 %"Optimization of Engineering Design: Algorithms and Examples" by Prof. Kalyanmoy Deb
 % Code developed by Sri. Soumyabrata Bhattacharjee
-% Matlab version R2018b
+% Matlab version R2022b
 % Date: 14th October, 2018
 % Date: 25th October, 2023 (Updated)
 % Date: 27th October, 2023 (Updated)
