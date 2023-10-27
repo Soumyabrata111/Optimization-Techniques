@@ -1,47 +1,61 @@
-% Fibonacci Search Method
-% Matlab version R2018b
-% Date: 4th March, 2019 (started)
-clc
-clear
-%% Taking thefunction as input from user
-sc = inputdlg('Type an expression that is a function of x ' );    % Taking the equation as input from the user
-s = sc{:};                                                            % Function String
-f = str2func(['@(x) ' s]);
-a = input ('Enter lower boundary point: ');
-b = input ('Enter upper boundary point: ');
-sn = input ('Enter a very small number: ');
+% Exhaustive Search Method as Explained in the book 
+%"Optimization of Engineering Design: Algorithms and Examples" by Prof. Kalyanmoy Deb
+% Code developed by Sri. Soumyabrata Bhattacharjee
+% Matlab version R2022b
+% Date: 14th October, 2018
+% Date: 27th October, 2023 (Updated)
 
-%% Initializing the variable
-k = 2;
-a_new = a;
-b_new = b;
-Lw = b - a;
-aw = (a_new - a)/(b  - a);
-bw = (b_new - a)/(b  - a);
-Lw = bw - aw;
-w1 = aw + .618 * Lw;
-w2 = bw - .618 * Lw;
-y1 = feval(f,(w1));
-y2 = feval(f,(w2));
-%% Starting the algorithm
-while Lw > sn
-    aw = (a_new - a)/(b  - a);
-    bw = (b_new - a)/(b  - a);
-    Lw = bw - aw;
-    w1 = aw + .618 * Lw;
-    w2 = bw - .618 * Lw;
-    if mod (Lw,2) == 0
-        y1 = feval(f,(w1));
+clear all
+clc
+a = 0.1;  % Lower bound
+b = 14 ;  % Upper bound
+eps = 1e-8;  % Desired accuracy
+gr = (1 + 5^0.5) / 2;  % Golden Ratio
+
+f=@(x) x.^2+54./x;
+
+x = linspace(a,b,1000);
+
+% Initialization
+x1 = a + (b - a) / gr;
+x2 = b - (b - a) / gr;
+
+while abs(b - a) > eps
+    f1 = f(x1);
+    f2 = f(x2);
+    if f1 > f2
+        b = x2;
+        x2 = x1;
+        x1 = a + (b - a) / gr;
     else
-        y2 = feval(f,(w2));
+        a = x1;
+        x1 = x2;
+        x2 = b - (b - a) / gr;
     end
-    % Region eliminiation  
-    if y1 > y2
-        a_new = w1;
-    else
-        b_new = w2;
-    end
-    c = 0.5*(a+b);
-    k = k + 1;
 end
-fprintf ('The minimum value is: %f \n',c);
+x_min = (a+b)/2;
+f_min = f(x_min);
+disp(['The approx minimum point is: ',num2str(x_min)])
+disp(['The approx minimum function value is: ',num2str(f_min)])
+
+% Plotting
+plot(x,f(x),'LineWidth',2,'DisplayName',func2str(f));
+xlabel('x',FontWeight='bold');
+ylabel('f(x)','FontWeight','bold')
+grid on;
+title('Golden Section Search Method','FontWeight','bold');
+
+hold on;
+
+% Scatter plot for the minimum point
+scatter(x_min, f_min, 100, 'red', 'filled', 'DisplayName', 'Minimum Point');
+
+% Adding Legend
+legend('Location','best')
+legend('show')
+
+% Save the figure as a PNG file
+saveas(gcf, 'Golden Section Search Method.png');
+
+% Display the plot
+hold off;
