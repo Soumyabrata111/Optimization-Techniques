@@ -1,3 +1,5 @@
+# Exhaustive Search Method
+
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -19,7 +21,6 @@ f_min =f(x_min)
 
 while x3<=b:
     if f(x2)<=f(x1) and f(x2)<=f(x3):
-        print('The minimum point lies between: ['+str(x1)+','+str(x3)+']')
         print('The approx minimum point is: '+str(x2))
         print('The approx minimum function value is: '+str(f(x2)))
         x_min=x2
