@@ -5,6 +5,7 @@ The first one in the lot is the exhaustive search method. The programme finds th
 
 Update:
 1) Golden Section Search method for both python and matlab has been updated now.
+2) Bounding Phase method for both python and matlab has been updated now.
 
 I am currently working as an Assistant Professor in the Department of Mechanical Engineering, Mandsaur University.
 Please let me know if you find any bug. I can be reached at soumyabrata111@gmail.com
