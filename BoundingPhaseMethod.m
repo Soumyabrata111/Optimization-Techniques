@@ -1,61 +1,70 @@
 % Bounding Phase Method as Explained in the book 
-%"Optimization of Engineering Design: Algorithms and Examples" by Prof. Kalyanmoy Deb
+%"ENGINEERING OPTIMIZATION Methods and Applications" SECOND EDITION by A. Ravindran, K. M. Ragsdell and G. V. Reklaitis
 % Code developed by Sri. Soumyabrata Bhattacharjee
-% Matlab version R2018b
+% Matlab version R2022a
 % Date: 15th October, 2018
+% Date: 30th October, 2023 (updated)
+
 clc
-clear
-%% Taking input from user
-a = input('What is the lower limit? ');
-b = input('What is the upper limit? ');
-x0 = input('Enter the initial guess: ');
-if x0<=a || x0>=b || b<=a
-    disp ('Please enter reasonable values')
-end
+clear all
+% Bounding Phase Method
 
-if x0>a && x0<b && b>a 
-    delta_x = input ('Enter the increment: ');
-    c = max(a,b); % To set the axex limit
+a = 0.1;  % Lower bound
+b = 14;   % Upper bound
+dx = 1e-5; % Step-size parameter
 
-%% Initialization
-    k = 0; % Whose value would be incremented once the computation starts
-    x1 = x0 - delta_x;
-    x2 = x0; 
-    x3 = x0 + delta_x; 
+% Function to be minimized
+f = @(x) x.^2 + 54./x;
 
-%% Taking thefunction as input from user
-    str = input('Give an equation in x: ','s'); % the user types in, for instance 2*x^2-3*x+4
-    f = inline(str,'x') ;
+% Initialization
+x_mid = a + dx*(b-a); % Initial guess
+x_lb = x_mid - dx; % Current lower bound
+x_ub = x_mid + dx; % Current upper bound
+f_mid = f(x_mid);
+f_lb = f(x_lb);
+f_ub = f(x_ub);
+k = 0; % Value will be iterated
+x = linspace(a, b, 1000);
 
-%% Determining whether the inicrement is positive or negative
-    y1 = feval(f,x1); 
-    y2 = feval(f,x2);
-    y3 = feval(f,x3); 
-
-    if y1 >= y2 && y2 >= y3
-        increment_x = abs (delta_x);
+% Check whether the function is unimodal
+while x_ub <= b && x_lb >= a
+    if f_mid >= f_lb && f_mid >= f_ub
+        disp([f_lb, f_mid, f_ub]);
+        disp('The function is not unimodal');
+    elseif f_lb >= f_mid && f_mid >= f_ub
+        dx = abs(dx);
+        disp(['dx: ', num2str(dx)]);
     else
-        increment_x = -abs (delta_x);
+        dx = -abs(dx);
+        disp(['dx: ', num2str(dx)]);
     end
-    while (x3 <= b)
-        yold = feval (f,x2);
-        ynew = feval (f,x3);
-        if ynew > yold
-            fprintf('The solution lies betwee %f & %f \n',x3,x2)
-            break
-        else
-            k = k+1;
-            x2 = x3;
-            x3 = x2 + (2^k)*increment_x;
-            y2 = feval(f,x2);
-            y3 = feval(f,x3);
-        end
-    end       
+    k = k + 1;
+    x_mid_new = x_mid + 2^k*dx;
+    f_mid_new = f(x_mid_new);
+    if f_mid_new > f_mid
+        break;
+    end
+    x_mid = x_mid_new;
+    x_lb = x_mid - dx;
+    x_ub = x_mid + dx;
+    f_mid = f_mid_new;
+    f_lb = f(x_lb);
+    f_ub = f(x_ub);
+    disp(['k=', num2str(k), ',x_mid=', num2str(x_mid), ',x_lb=', num2str(x_lb), ',x_ub=', num2str(x_ub)]);
+    disp(['The approximate minimum point and the value respectively are: ', num2str(x_mid), ' and ', num2str(f_mid)]);
 end
-fplot (f,[a b], 'b')% Plotting the function
-grid on
-hold on
-plot(x2,y2,'*') 
-hold on
-plot(x3,y3,'o') 
-hold off
+
+% Plot the function
+x_values = linspace(a, b, 1000);
+f_values = f(x_values);
+
+figure;
+plot(x_values, f_values,'DisplayName', func2str(f));
+xlabel('x', 'FontWeight', 'bold');
+ylabel('f(x)', 'FontWeight', 'bold');
+grid on;
+title('Bounding Phase Method', 'FontWeight', 'bold');
+hold on;
+scatter(x_mid, f_mid, 100, 'red', 'filled', 'DisplayName', 'Minimum Point');
+legend('show');
+saveas(gcf, 'Bounding_Phase_Method.png');
