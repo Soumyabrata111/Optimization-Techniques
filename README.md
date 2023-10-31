@@ -1,15 +1,25 @@
-# Optimization-Techniques
-This repository will include many codes for optimisation techniques as described in the book "Optimization of Engineering Design: Algorithms and Examples" by Prof. Kalyanmoy Deb.
+# Optimization Techniques
 
-The first one in the lot is the exhaustive search method. The programme finds the approximate minimum of the function that the user inputs and plots both the function as well as the minimum point. The minimum point is represented by the (o) mark. The old code has been updated to replace the feval function, as that creates some security concerns. Now the code uses a function handle consisting of the expression that needs to be minimised.
+This repository contains implementations of various optimization techniques outlined in the book "Optimization of Engineering Design: Algorithms and Examples" by Prof. Kalyanmoy Deb.
 
-Update:
-1) Golden Section Search method for both python and matlab has been updated now.
-2) Bounding Phase method for both python and matlab has been updated now.
+## Techniques Included
 
-I am currently working as an Assistant Professor in the Department of Mechanical Engineering, Mandsaur University.
-Please let me know if you find any bug. I can be reached at soumyabrata111@gmail.com
+1. **Exhaustive Search Method**
+   - This program approximates the minimum of a user-defined function. It provides visual representation by plotting both the function and the minimum point (marked as 'o').
 
-Get the latest matlab files at: 
+2. **Golden Section Search**
+   - Updated versions available for both Python and MATLAB.
+
+3. **Bounding Phase Method**
+   - Updated versions available for both Python and MATLAB.
+
+4. **Interval Halving Method**
+   - Updated versions available for both Python and MATLAB.
+
+## About the Author
+
+I am currently working as an Assistant Professor in the Department of Mechanical Engineering at Mandsaur University. If you come across any bugs or have suggestions for improvement, feel free to reach out at soumyabrata111@gmail.com.
+
+## Get the Latest MATLAB Files
 
 [![View Optimization-Techniques on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://in.mathworks.com/matlabcentral/fileexchange/69108-optimization-techniques)
