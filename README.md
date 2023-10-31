@@ -6,15 +6,19 @@ This repository contains implementations of various optimization techniques outl
 
 1. **Exhaustive Search Method**
    - This program approximates the minimum of a user-defined function. It provides visual representation by plotting both the function and the minimum point (marked as 'o').
+   - [https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/ExhaustiveSearchMethod.py](exhaustive_search/)
 
 2. **Golden Section Search**
    - Updated versions available for both Python and MATLAB.
+   - [https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/GoldenSectionSearchMethod.py](golden_section_search/)
 
 3. **Bounding Phase Method**
    - Updated versions available for both Python and MATLAB.
+   - [https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/BoundingPhaseMethod.py](bounding_phase/)
 
 4. **Interval Halving Method**
    - Updated versions available for both Python and MATLAB.
+   - [https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/IntervalHalvingMethod.py](interval_halving/)
 
 ## About the Author
 
