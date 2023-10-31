@@ -8,7 +8,13 @@ def f(x):
     return x**2+54/x
 
 # Initialization
-x_m=(a+b)/2 # Mid point
-L=b-a # Length of search space
-x1=a+L/4 # Left intermediary point 
-x2=b-L/4 # Right intermediary point
+xm = (a+b)/2 # Mid point
+L = b - a # Length of search space
+x1 = a + L/4 # Left intermediary point 
+x2 = b - L/4 # Right intermediary point
+
+f1 = f(x1)
+f2 = f(x2)
+fm = f(xm)
+print(f"x1={x1}, xm={xm}, x2={x2}")
+print(f"f1={f1}, fm={fm}, f2={f2}")
