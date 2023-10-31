@@ -1,4 +1,7 @@
 # Interval Halving Method
+
+import matplotlib.pyplot as plt
+import numpy as np
 a = 0.1 # Lower bound
 b = 14 # Upper bound
 eps = 1e-5 # Desired accuracy
@@ -16,6 +19,8 @@ x2 = b - L/4 # Right intermediary point
 f1 = f(x1)
 f2 = f(x2)
 fm = f(xm)
+x = np.linspace(a,b,1000)
+
 
 while abs(L)>eps:
     if f1<fm:
@@ -35,3 +40,14 @@ while abs(L)>eps:
     fm = f(xm)
 
 print (f"The minimum point lies between {x1} and {x2}")
+
+# Plot the function
+plt.plot(x,f(x))
+plt.xlabel("x",fontweight='bold')
+plt.ylabel("f(x)",fontweight='bold')
+plt.grid(which='major',axis='both',linestyle='dashed')
+plt.title('Interval Halving Method',fontweight='bold')
+plt.scatter(xm,fm, color='red', label='Approximate Minimum Point')
+plt.legend()
+plt.savefig('Interval Halving Method.png',dpi=300)
+plt.show()
