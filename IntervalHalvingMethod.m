@@ -1,41 +1,64 @@
 % Interval Halving Method as Explained in the book 
 %"Optimization of Engineering Design: Algorithms and Examples" by Prof. Kalyanmoy Deb
 % Code developed by Sri. Soumyabrata Bhattacharjee
-% Matlab version R2018b
+% Matlab version R2022a
 % Date: 16th October, 2018
+% Date: 31st October, 2023 (updated)
 clc
 clear
-%% Taking input from user
-a = input('What is the lower limit? ');
-b = input('What is the upper limit? ');
-epsilon = input('Please enter a small number: ');% A very small number to check whether the loop would be executed or not
-c = max(a,b); % To set the axex limit
-L = b-a; % Length of the interval
-%% Taking thefunction as input from user
-str = input('Give an equation in x: ','s'); % the user types in, for instance 2*x^2-3*x+4
-f = inline(str,'x');
-%% Loop 
-while (abs (L) > epsilon)
-    xm = (a+b)/2; %middle point of the interval
-    ym = feval(f,xm);
-    x1 = a+(L/4);
-    x2 = b-(L/4);
-    y1 = feval(f,x1);
-    y2 = feval(f,x2);
-    if y1<ym
+% Interval Halving Method
+
+a = 0.1; % Lower bound
+b = 14; % Upper bound
+eps = 1e-5; % Desired accuracy
+
+% Function to minimize
+f = @(x) x.^2 + 54./x;
+
+% Initialization
+xm = (a + b) / 2; % Mid point
+L = b - a; % Length of search space
+x1 = a + L / 4; % Left intermediary point
+x2 = b - L / 4; % Right intermediary point
+
+f1 = f(x1);
+f2 = f(x2);
+fm = f(xm);
+x_vals = linspace(a, b, 1000);
+y_vals = f(x_vals);
+
+while abs(L) > eps
+    if f1 < fm
         b = xm;
         xm = x1;
-        break
-    elseif y2<ym
+    elseif f2 < fm
         a = xm;
         xm = x2;
-        break
     else
         a = x1;
         b = x2;
     end
-    L = b-a;
+    
+    L = b - a;
+    x1 = a + L / 4;
+    x2 = b - L / 4;
+    f1 = f(x1);
+    f2 = f(x2);
+    fm = f(xm);
 end
-fprintf('The solution lies betwee %f & %f \n',a,b);
-fplot (f,[a b], 'r')% Plotting the function
-grid on
+
+fprintf('The minimum point lies between %.8f and %.8f\n', x1, x2);
+
+% Plot the function
+plot(x_vals, y_vals);
+xlabel('x', 'FontWeight', 'bold');
+ylabel('f(x)', 'FontWeight', 'bold');
+grid on;
+title('Interval Halving Method', 'FontWeight', 'bold');
+
+hold on;
+scatter(xm, fm, 100, 'red', 'filled', 'MarkerEdgeColor', 'black', 'LineWidth', 1.5, 'DisplayName', 'Approximate Minimum Point');
+legend('show');
+hold off;
+
+saveas(gcf, 'Interval_Halving_Method.png', 'png');
