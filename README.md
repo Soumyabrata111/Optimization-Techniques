@@ -29,7 +29,7 @@ This repository contains implementations of various optimization techniques outl
       - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/IntervalHalvingMethod.m)
 5. **Fibonacci Search Method**
    - Description: The Fibonacci Search Method is another iterative approach for finding the minimum of a function within a specified interval.
-   - Versions available for both Python:
+   - Version available for Python:
       - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/FibonacciSearchMethod.py)
      
 ## About the Author
