@@ -7,27 +7,31 @@ This repository contains implementations of various optimization techniques outl
 1. **Exhaustive Search Method**
    - Description: The exhaustive search method is a brute-force approach to finding the minimum of a function within a specified range.
    - Versions available for both Python and MATLAB:
-      - [Python Code](exhaustive_search/ExhaustiveSearchMethod.py)
-      - [MATLAB Code](exhaustive_search/ExhaustiveSearchMethod.m)
+      - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/ExhaustiveSearchMethod.py)
+      - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/ExhaustiveSearchMethod.m)
 
 2. **Golden Section Search**
    - Description: The Golden Section Search is an iterative method that narrows down the search space to find the minimum of a unimodal function.
    - Versions available for both Python and MATLAB:
-      - [Python Code](golden_section_search/GoldenSectionSearchMethod.py)
-      - [MATLAB Code](golden_section_search/GoldenSectionSearchMethod.m)
+      - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/GoldenSectionSearchMethod.py)
+      - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/GoldenSectionSearchMethod.m)
 
 3. **Bounding Phase Method**
    - Description: The Bounding Phase Method is an optimization technique that involves narrowing down the search interval to find the minimum of a unimodal function.
    - Versions available for both Python and MATLAB:
-      - [Python Code](bounding_phase_search/BoundingPhaseMethod.py)
-      - [MATLAB Code](bounding_phase_search/BoundingPhaseMethod.m)
+      - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/BoundingPhaseMethod.py)
+      - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/BoundingPhaseMethod.m)
 
 4. **Interval Halving Method**
    - Description: The Interval Halving Method is an iterative approach for finding the minimum of a function within a specified interval.
    - Versions available for both Python and MATLAB:
-      - [Python Code](interval_halving_search/IntervalHalvingMethod.py)
-      - [MATLAB Code](interval_halving_search/IntervalHalvingMethod.m)
-
+      - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/IntervalHalvingMethod.py)
+      - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/IntervalHalvingMethod.m)
+5. **Fibonacci Search Method**
+   - Description: The Fibonacci Search Method is another iterative approach for finding the minimum of a function within a specified interval.
+   - Versions available for both Python:
+      - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/FibonacciSearchMethod.py)
+     
 ## About the Author
 
 I am currently working as an Assistant Professor in the Department of Mechanical Engineering at Mandsaur University. If you come across any bugs or have suggestions for improvement, feel free to reach out at soumyabrata111@gmail.com. I am also available for freelancing work in the field of Optimization Algorithms, Machine Learning, and Deep Learning. My current research work is in time series analysis and classification algorithms.
