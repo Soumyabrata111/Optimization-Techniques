@@ -36,6 +36,7 @@ This repository contains implementations of various optimization techniques outl
    - Description: The Quadratic Estimation Method is the simplest of all the polynomial interpolation approach for finding the minimum of a function within a specified interval.
    - Version available for Python:
       - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/QuadraticEstimationMethod.py)
+      - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/QuadraticEstimationMethod.m)
      
 ## About the Author
 
