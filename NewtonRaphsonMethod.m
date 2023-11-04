@@ -1,59 +1,58 @@
 % Newton-Raphson Method as Explained in the book 
 %"Optimization of Engineering Design: Algorithms and Examples" by Prof. Kalyanmoy Deb
 % Code developed by Sri. Soumyabrata Bhattacharjee
-% Matlab version R2018b
+% Matlab version R2022a
 % Date: 16th October, 2018
+% Date: 4th November, 2023
 clc
 clear
-%% Taking thefunction as input from user
-str = input('Give an equation in x: ','s'); % the user types in, for instance 2*x^2-3*x+4
-f = inline(str,'x');
-epsilon = input ('Enter a small number based on which the algorithm would be terminated: ');
-%% Taking input from user
-x1 = input('What is the initital guess? ');
-%% Inititalization
-k = 1; %Iteration counter
-%% The algorithm related calculations starts
-% Compute f'(x1)
-if abs(x1)>0.01
-    delta_x1 = 0.01*abs(x1);
-else
-    delta_x1 = 0.0001;
-end
-f_dash_x1 = (feval(f,(x1+delta_x1))-(feval(f,(x1-delta_x1))))/(2*delta_x1);
-% Compute f''(x1)
-f_doubledash_x1 = (feval(f,(x1+delta_x1))-(2*feval(f,x1))+(feval(f,(x1-delta_x1))))/(delta_x1^2);
-% Calculate next x i.e. x2
-x2 = x1 - f_dash_x1/f_doubledash_x1;
-% Compute f'(x2)
-if abs(x2)>0.01
-    delta_x2 = 0.01*abs(x2);
-else
-    delta_x2 = 0.0001;
-end
-f_dash_x2 = (feval(f,(x2+delta_x2))-(feval(f,(x2-delta_x2))))/(2*delta_x2);
-while abs(f_dash_x2)>epsilon
-    x1 = x2;
-    % Compute f'(x1)
-    if abs(x1)>0.01
-        delta_x1 = 0.01*abs(x1);
-    else
-        delta_x1 = 0.0001;
-    end
-    f_dash_x1 = (feval(f,(x1+delta_x1))-(feval(f,(x1-delta_x1))))/(2*delta_x1);
-    % Compute f''(x1)
-    f_doubledash_x1 = (feval(f,(x1+delta_x1))-(2*feval(f,x1))+(feval(f,(x1-delta_x1))))/(delta_x1^2);
-    % Calculate next x i.e. x2
-    x2 = x1 - f_dash_x1/f_doubledash_x1;
-    % Compute f'(x2)
-    if abs(x2)>0.01
-        delta_x2 = 0.01*abs(x2);
-    else
-        delta_x2 = 0.0001;
-    end
-    f_dash_x2 = (feval(f,(x2+delta_x2))-(feval(f,(x2-delta_x2))))/(2*delta_x2);
-    k = k+1;
-end
-fprintf('The solution lies at %f & it has been obtained after %f iterations \n',x2,k);
+% Newton-Raphson Method
 
+a = 0.1; % Lower bound
+b = 15; % Upper bound
 
+x_p = linspace(a, b, 1000); % points for plotting the function
+
+% Function to minimize
+f = @(x) x^2 + 54/x;
+
+% Function to determine the value of 'dx'
+dx = @(x) 0.01 * abs(x);
+dx = @(x) max(dx(x), 0.0001);
+
+% Function to calculate first derivative of the function
+fdx = @(x) (f(x + dx(x)) - f(x - dx(x))) / (2 * dx(x));
+
+% Function to calculate second derivative of the function
+fddx = @(x) (f(x + dx(x)) - 2 * f(x) + f(x - dx(x))) / (dx(x)^2);
+
+% Initialization
+x = a; % Initial guess
+eps = 1e-5; % Small number to check convergency
+max_iterations = 1000; % Maximum number of iterations
+
+xn = x - (fdx(x) / fddx(x));
+fn = f(xn);
+
+k = 1; % Counter
+
+while fn > eps && k <= max_iterations
+    k = k + 1;
+    x = xn;
+    xn = x - (fdx(x) / fddx(x));
+    fn = f(xn);
+end
+
+fprintf('The approximate minimum point and the value respectively are: %.4f and %.4f\n', xn, fn);
+
+% Plot the function
+figure;
+plot(x_p, arrayfun(f, x_p),'DisplayName', func2str (f));
+xlabel('x', 'FontWeight', 'bold');
+ylabel('f(x)', 'FontWeight', 'bold');
+grid on;
+title('Newton-Raphson Method', 'FontWeight', 'bold');
+hold on;
+scatter(xn, fn, 'r', 'filled', 'DisplayName', 'Approximate Minimum Point');
+legend('Location', 'Best');
+saveas(gcf, 'NewtonRaphsonMethod.png', 'png');
