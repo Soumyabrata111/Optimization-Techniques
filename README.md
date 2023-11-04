@@ -37,10 +37,15 @@ This repository contains implementations of various optimization techniques outl
    - Version available for Python:
       - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/QuadraticEstimationMethod.py)
       - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/QuadraticEstimationMethod.m)
-7. **Quadratic Estimation Method**
+7. **Successive Quadratic Estimation Method**
    - Description: It is the more refined form of he Quadratic Estimation Method, which iteratively finds the minimum of a function within a specified interval.
    - Version available for Python:
       - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/SuccessiveQuadraticEstimationMethod.py)
+7. **Newton-Raphson Method**
+   - Description: It is a very simple gradient-based method, suitable for unconstrained optimization problems.
+   - Version available for Python:
+      - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/NewtonRaphsonMethod.py)
+      - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/NewtonRaphsonMethod.m)
      
 ## About the Author
 
