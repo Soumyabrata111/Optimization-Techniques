@@ -3,8 +3,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-a=1 #Lower bound
-b=5 #Upper bound
+a=0.1 #Lower bound
+b=14 #Upper bound
 dx=1e-5 # Step size
 fcp=1e-8 # Convergence parameter for function evaluation
 
@@ -67,3 +67,14 @@ while abs(f_min-f_bar)>fcp:
         f_bar=f(x_bar)
 
 print(f'The approximate minimum function value is {f_min}, at {x_min}')
+
+# Plot the function
+plt.plot(x,f(x))
+plt.xlabel("x",fontweight='bold')
+plt.ylabel("f(x)",fontweight='bold')
+plt.grid(which='major',axis='both',linestyle='dashed')
+plt.title('Exhaustive Search Method',fontweight='bold')
+plt.scatter(x_min,f_min, color='red', label='Approximate Minimum Point')
+plt.legend()
+plt.savefig('Successive Quadratic Estimation Method.png',dpi=300)
+plt.show()
