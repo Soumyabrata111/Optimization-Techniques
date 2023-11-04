@@ -42,11 +42,15 @@ This repository contains implementations of various optimization techniques outl
    - Version available for Python:
       - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/SuccessiveQuadraticEstimationMethod.py)
       - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/SuccessiveQuadraticEstimationMethod.m)
-7. **Newton-Raphson Method**
+8. **Newton-Raphson Method**
    - Description: It is a very simple gradient-based method, suitable for unconstrained optimization problems.
    - Version available for Python:
       - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/NewtonRaphsonMethod.py)
       - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/NewtonRaphsonMethod.m)
+9. **Bisection Method**
+   - Description: This version of Bisection Method, does not need the two end points, of the search space have function values of opposite value. Rather, the algorithm is based on first derivative of the function within the search space. The search space reduces with every iteration.
+   - Version available for Python:
+      - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/BisectionMethod.py)
      
 ## About the Author
 
