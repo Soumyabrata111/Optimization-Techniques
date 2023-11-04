@@ -37,6 +37,10 @@ This repository contains implementations of various optimization techniques outl
    - Version available for Python:
       - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/QuadraticEstimationMethod.py)
       - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/QuadraticEstimationMethod.m)
+7. **Quadratic Estimation Method**
+   - Description: It is the more refined form of he Quadratic Estimation Method, which iteratively finds the minimum of a function within a specified interval.
+   - Version available for Python:
+      - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/SuccessiveQuadraticEstimationMethod.py)
      
 ## About the Author
 
