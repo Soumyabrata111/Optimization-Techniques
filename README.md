@@ -52,6 +52,10 @@ This repository contains implementations of various optimization techniques outl
    - Version available for Python:
       - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/BisectionMethod.py)
       - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/BisectionMethod.m)
+10. **Secant Method**
+   - Description: Secant Method is a modification of the Bisection Method. Here the point 'z', of the search space, is not the mid-point, rather it depends on the values of first derivative of the function.
+   - Version available for Python:
+      - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/SecantMethod.py)
      
 ## About the Author
 
