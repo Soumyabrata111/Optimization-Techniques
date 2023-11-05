@@ -56,6 +56,11 @@ This repository contains implementations of various optimization techniques outl
    - Description: Secant Method is a modification of the Bisection Method. Here the point 'z', of the search space, is not the mid-point, rather it depends on the values of first derivative of the function.
    - Version available for Python:
       - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/SecantMethod.py)
+11. **Cubic Search Method**
+   - Description: Cubic Search Method is used to find the minimum of an unimodal function, iteratively. It is similar to the successive quadratic point-estimation method.
+   - Versions available for both Python and MATLAB:
+      - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/CubicSearchMethod.py)
+      - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/CubicSearchMethod.m)
      
 ## About the Author
 
