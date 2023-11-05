@@ -11,13 +11,13 @@ This repository contains implementations of various optimization techniques outl
       - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/ExhaustiveSearchMethod.m)
 
 2. **Golden Section Search**
-   - Description: The Golden Section Search is an iterative method that narrows down the search space to find the minimum of a unimodal function.
+   - Description: The Golden Section Search is an iterative method that narrows down the search space to find the minimum of an unimodal function.
    - Versions available for both Python and MATLAB:
       - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/GoldenSectionSearchMethod.py)
       - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/GoldenSectionSearchMethod.m)
 
 3. **Bounding Phase Method**
-   - Description: The Bounding Phase Method is an optimization technique that involves narrowing down the search interval to find the minimum of a unimodal function.
+   - Description: The Bounding Phase Method is an optimization technique that involves narrowing down the search interval to find the minimum of an unimodal function.
    - Versions available for both Python and MATLAB:
       - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/BoundingPhaseMethod.py)
       - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/BoundingPhaseMethod.m)
@@ -33,12 +33,12 @@ This repository contains implementations of various optimization techniques outl
       - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/FibonacciSearchMethod.py)
       - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/fibonacci_search_method.m)
 6. **Quadratic Estimation Method**
-   - Description: The Quadratic Estimation Method is the simplest of all the polynomial interpolation approach for finding the minimum of a function within a specified interval.
+   - Description: The Quadratic Estimation Method is the simplest of all the polynomial interpolation approaches for finding the minimum of a function within a specified interval.
    - Version available for Python:
       - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/QuadraticEstimationMethod.py)
       - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/QuadraticEstimationMethod.m)
 7. **Successive Quadratic Estimation Method**
-   - Description: It is the more refined form of he Quadratic Estimation Method, which iteratively finds the minimum of a function within a specified interval.
+   - Description: It is the more refined form of the Quadratic Estimation Method, which iteratively finds the minimum of a function within a specified interval.
    - Version available for Python:
       - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/SuccessiveQuadraticEstimationMethod.py)
       - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/SuccessiveQuadraticEstimationMethod.m)
@@ -48,9 +48,10 @@ This repository contains implementations of various optimization techniques outl
       - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/NewtonRaphsonMethod.py)
       - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/NewtonRaphsonMethod.m)
 9. **Bisection Method**
-   - Description: This version of Bisection Method, does not need the two end points, of the search space have function values of opposite value. Rather, the algorithm is based on first derivative of the function within the search space. The search space reduces with every iteration.
+   - Description: This version of the Bisection Method, does not need the two endpoints, of the search space to have function values of opposite values. Rather, the algorithm is based on the first derivative of the function within the search space. The search space reduces with every iteration.
    - Version available for Python:
       - [Python Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/BisectionMethod.py)
+      - [MATLAB Code](https://github.com/Soumyabrata111/Optimization-Techniques/blob/master/BisectionMethod.m)
      
 ## About the Author
 
